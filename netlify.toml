@@ -2,8 +2,11 @@
   command = "npm run build"
   publish = ".next"
 
-[[plugins]]
-  package = "@netlify/next-runtime"
-
 [build.environment]
   NODE_VERSION = "20"
+  NEXT_PRIVATE_TARGET = "server"
+
+[[plugins]]
+  package = "@netlify/next-runtime"
+  [plugins.inputs]
+    target = "server"
